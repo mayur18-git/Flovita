@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Flovita</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/checkout.css">
+</head>
+<body>
+    <header>
+        <!-- Top Header - Sticky -->
+        <div class="flovita-header-top">
+            <div class="flovita-top-container">
+                <!-- Logo Section -->
+                <div class="flovita-logo">
+                    <div class="flovita-logo-icon">F</div>
+                    <div class="flovita-brand">
+                        <h1>Flovita <span style="font-size: 0.8em;">🌸</span></h1>
+                        <span>Fresh blooms & gifts</span>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flovita-search">
+                    <div class="flovita-search-box">
+                        <span class="flovita-search-icon">🔍</span>
+                        <input type="text" placeholder="Search for Products, Brands and More" aria-label="Search products">
+                    </div>
+                </div>
+                
+                <!-- Header Actions -->
+                <div class="flovita-actions">
+                    <a href="login.html" class="flovita-action-btn" aria-label="Login">
+                        👤 Login
+                    </a>
+                    <div class="flovita-cart-section">
+                        <a href="cart.html" class="flovita-action-btn" aria-label="Shopping cart">
+                            🛒 Cart
+                            <span class="flovita-cart-badge">0</span>
+                        </a>
+                        <a href="checkout.html" class="flovita-action-btn flovita-checkout-btn" aria-label="Checkout">
+                            💳 Checkout
+                        </a>
+                    </div>
+                    <a href="orders.html" class="flovita-action-btn" aria-label="Orders">
+                        📎 Orders
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Category Bar -->
+        <div class="flovita-header-bottom">
+            <nav class="flovita-categories" role="navigation" aria-label="Product categories">
+                <a href="index.html" class="flovita-category" aria-label="Home">
+                    <div class="flovita-category-icon">🏠</div>
+                    <div class="flovita-category-text">Home</div>
+                </a>
+                <a href="men.html" class="flovita-category" aria-label="Men's Fashion">
+                    <div class="flovita-category-icon">👔</div>
+                    <div class="flovita-category-text">Men</div>
+                </a>
+                <a href="women.html" class="flovita-category" aria-label="Women's Fashion">
+                    <div class="flovita-category-icon">👗</div>
+                    <div class="flovita-category-text">Women</div>
+                </a>
+                <a href="kids.html" class="flovita-category" aria-label="Kids Fashion">
+                    <div class="flovita-category-icon">👶</div>
+                    <div class="flovita-category-text">Kids</div>
+                </a>
+                <a href="accessories.html" class="flovita-category" aria-label="Accessories">
+                    <div class="flovita-category-icon">👜</div>
+                    <div class="flovita-category-text">Accessories</div>
+                </a>
+                <a href="contact.html" class="flovita-category" aria-label="Contact Us">
+                    <div class="flovita-category-icon">📞</div>
+                    <div class="flovita-category-text">Contact</div>
+                </a>
+                <a href="about.html" class="flovita-category" aria-label="About Us">
+                    <div class="flovita-category-icon">ℹ️</div>
+                    <div class="flovita-category-text">About</div>
+                </a>
+                <a href="register.html" class="flovita-category" aria-label="Register">
+                    <div class="flovita-category-icon">📝</div>
+                    <div class="flovita-category-text">Register</div>
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="checkout-container">
+        <div class="checkout-header">
+            <h1>💳 Secure Checkout</h1>
+            <div class="progress-bar">
+                <div class="progress-step active" id="progress-1">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" id="progress-2">2</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" id="progress-3">3</div>
+            </div>
+        </div>
+        
+        <div class="checkout-main">
+            <div class="checkout-form">
+                <!-- Step 1: Delivery Details -->
+                <div class="step-content active" id="step-1">
+                    <h2>📦 Delivery Information</h2>
+                    <form id="deliveryForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" id="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Mobile Number *</label>
+                                <input type="tel" id="mobile" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 1 *</label>
+                            <input type="text" id="address1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 2</label>
+                            <input type="text" id="address2">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>City *</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label>State *</label>
+                                <input type="text" id="state" required>
+                            </div>
+                            <div class="form-group">
+                                <label>PIN Code *</label>
+                                <input type="text" id="pincode" required>
+                            </div>
+                        </div>
+                        <button type="button" class="next-btn" onclick="nextStep()">Continue to Payment →</button>
+                    </form>
+                </div>
+                
+                <!-- Step 2: Payment Method -->
+                <div class="step-content" id="step-2">
+                    <h2>💳 Payment Method</h2>
+                    <div class="payment-methods">
+                        <div class="payment-option">
+                            <input type="radio" id="upi" name="payment" value="upi">
+                            <label for="upi">
+                                <div class="payment-icon">📱</div>
+                                <div class="payment-text">
+                                    <strong>UPI Payment</strong>
+                                    <span>Pay using UPI ID</span>
+                                </div>
+                            </label>
+                            <div class="payment-details" id="upi-details">
+                                <input type="text" placeholder="Enter UPI ID (e.g., user@paytm)" id="upiId">
+                            </div>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <input type="radio" id="card" name="payment" value="card">
+                            <label for="card">
+                                <div class="payment-icon">💳</div>
+                                <div class="payment-text">
+                                    <strong>Credit/Debit Card</strong>
+                                    <span>Visa, MasterCard, RuPay</span>
+                                </div>
+                            </label>
+                            <div class="payment-details" id="card-details">
+                                <input type="text" placeholder="Card Number" id="cardNumber" maxlength="19">
+                                <div class="card-row">
+                                    <input type="text" placeholder="MM/YY" id="expiry" maxlength="5">
+                                    <input type="text" placeholder="CVV" id="cvv" maxlength="3">
+                                </div>
+                                <input type="text" placeholder="Cardholder Name" id="cardName">
+                            </div>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <input type="radio" id="cod" name="payment" value="cod">
+                            <label for="cod">
+                                <div class="payment-icon">💵</div>
+                                <div class="payment-text">
+                                    <strong>Cash on Delivery</strong>
+                                    <span>Pay when you receive</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-buttons">
+                        <button type="button" class="back-btn" onclick="prevStep()">← Back</button>
+                        <button type="button" class="place-order-btn" onclick="processPayment()">Place Order 🚀</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Order Confirmation -->
+                <div class="step-content" id="step-3">
+                    <div class="success-animation">
+                        <div class="checkmark">✓</div>
+                        <h2>Order Placed Successfully!</h2>
+                        <div class="order-details">
+                            <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+                            <p><strong>Estimated Delivery:</strong> 3-5 business days</p>
+                            <p>Order confirmation sent to your email</p>
+                        </div>
+                        <div class="success-buttons">
+                            <button onclick="window.location.href='orders.html'" class="view-orders-btn">View My Orders</button>
+                            <button onclick="window.location.href='index.html'" class="continue-shopping-btn">Continue Shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Order Summary Sidebar -->
+            <div class="order-summary-sidebar">
+                <div class="summary-card">
+                    <h3>Order Summary</h3>
+                    <div id="orderItems"></div>
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery:</span>
+                            <span class="free">FREE</span>
+                        </div>
+                        <hr>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="totalAmount"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentStep = 1;
+        let deliveryData = {};
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                window.location.href = 'cart.html';
+                return;
+            }
+            displayOrderSummary();
+            setupPaymentOptions();
+            setupCardFormatting();
+        });
+
+        function displayOrderSummary() {
+            const orderItems = document.getElementById('orderItems');
+            const subtotalEl = document.getElementById('subtotal');
+            const totalAmountEl = document.getElementById('totalAmount');
+            let total = 0;
+            let html = '';
+
+            cart.forEach(item => {
+                const price = parseFloat(item.price.replace('₹', '').replace(',', ''));
+                const subtotal = price * item.quantity;
+                total += subtotal;
+                html += `
+                    <div class="order-item">
+                        <span>${item.name} x ${item.quantity}</span>
+                        <span>₹${subtotal.toLocaleString()}</span>
+                    </div>
+                `;
+            });
+
+            orderItems.innerHTML = html;
+            if (subtotalEl) subtotalEl.textContent = `₹${total.toLocaleString()}`;
+            if (totalAmountEl) totalAmountEl.textContent = `₹${total.toLocaleString()}`;
+        }
+
+        function setupPaymentOptions() {
+            const paymentOptions = document.querySelectorAll('input[name="payment"]');
+            paymentOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    document.querySelectorAll('.payment-details').forEach(detail => {
+                        detail.style.display = 'none';
+                    });
+                    if (this.checked) {
+                        const details = document.getElementById(this.value + '-details');
+                        if (details) details.style.display = 'block';
+                    }
+                });
+            });
+        }
+
+        function setupCardFormatting() {
+            const cardNumber = document.getElementById('cardNumber');
+            const expiry = document.getElementById('expiry');
+            
+            if (cardNumber) {
+                cardNumber.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+                    let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+                    e.target.value = formattedValue;
+                });
+            }
+            
+            if (expiry) {
+                expiry.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length >= 2) {
+                        value = value.substring(0,2) + '/' + value.substring(2,4);
+                    }
+                    e.target.value = value;
+                });
+            }
+        }
+
+        function nextStep() {
+            if (validateDeliveryForm()) {
+                saveDeliveryData();
+                currentStep = 2;
+                updateSteps();
+            }
+        }
+
+        function prevStep() {
+            currentStep = 1;
+            updateSteps();
+        }
+
+        function validateDeliveryForm() {
+            const required = ['fullName', 'mobile', 'email', 'address1', 'city', 'state', 'pincode'];
+            for (let field of required) {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    element.focus();
+                    element.style.borderColor = '#ff4757';
+                    alert(`Please fill in ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`);
+                    return false;
+                }
+                element.style.borderColor = '#ddd';
+            }
+            return true;
+        }
+
+        function saveDeliveryData() {
+            deliveryData = {
+                fullName: document.getElementById('fullName').value,
+                mobile: document.getElementById('mobile').value,
+                email: document.getElementById('email').value,
+                address1: document.getElementById('address1').value,
+                address2: document.getElementById('address2').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                pincode: document.getElementById('pincode').value
+            };
+        }
+
+        function updateSteps() {
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                step.classList.toggle('active', index < currentStep);
+            });
+            
+            document.querySelectorAll('.step-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+        }
+
+        function processPayment() {
+            const selectedPayment = document.querySelector('input[name="payment"]:checked');
+            if (!selectedPayment) {
+                alert('Please select a payment method');
+                return;
+            }
+
+            if (!validatePaymentDetails(selectedPayment.value)) {
+                return;
+            }
+
+            const orderId = 'FLV' + Date.now();
+            const orderData = {
+                orderId: orderId,
+                deliveryDetails: deliveryData,
+                paymentMethod: selectedPayment.value,
+                paymentDetails: getPaymentDetails(selectedPayment.value),
+                items: cart,
+                total: calculateTotal(),
+                orderDate: new Date().toISOString(),
+                status: 'Confirmed'
+            };
+            
+            saveOrderData(orderData);
+            document.getElementById('orderId').textContent = orderId;
+            localStorage.removeItem('cart');
+            updateCartBadge();
+            
+            currentStep = 3;
+            updateSteps();
+        }
+
+        function validatePaymentDetails(paymentType) {
+            if (paymentType === 'upi') {
+                const upiId = document.getElementById('upiId').value;
+                if (!upiId || !upiId.includes('@')) {
+                    alert('Please enter a valid UPI ID');
+                    return false;
+                }
+            } else if (paymentType === 'card') {
+                const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
+                const expiry = document.getElementById('expiry').value;
+                const cvv = document.getElementById('cvv').value;
+                const cardName = document.getElementById('cardName').value;
+                
+                if (!cardNumber || cardNumber.length < 16) {
+                    alert('Please enter a valid card number');
+                    return false;
+                }
+                if (!expiry || expiry.length < 5) {
+                    alert('Please enter valid expiry date');
+                    return false;
+                }
+                if (!cvv || cvv.length < 3) {
+                    alert('Please enter valid CVV');
+                    return false;
+                }
+                if (!cardName) {
+                    alert('Please enter cardholder name');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function getPaymentDetails(paymentType) {
+            if (paymentType === 'upi') {
+                return { upiId: document.getElementById('upiId').value };
+            } else if (paymentType === 'card') {
+                return {
+                    cardNumber: '**** **** **** ' + document.getElementById('cardNumber').value.slice(-4),
+                    cardName: document.getElementById('cardName').value
+                };
+            } else if (paymentType === 'cod') {
+                return { method: 'Cash on Delivery' };
+            }
+            return {};
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            cart.forEach(item => {
+                const price = parseFloat(item.price.replace('₹', '').replace(',', ''));
+                total += price * item.quantity;
+            });
+            return total;
+        }
+
+        function saveOrderData(orderData) {
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
+            orders.push(orderData);
+            localStorage.setItem('orders', JSON.stringify(orders));
+        }
+        
+        function updateCartBadge() {
+            const badges = document.querySelectorAll('.flovita-cart-badge');
+            badges.forEach(badge => badge.textContent = '0');
+        }
+    </script>
+</body>
+</html>

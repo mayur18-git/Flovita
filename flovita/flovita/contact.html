@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Flovita</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <!-- Top Header - Sticky -->
+        <div class="flovita-header-top">
+            <div class="flovita-top-container">
+                <!-- Logo Section -->
+                <div class="flovita-logo">
+                    <div class="flovita-logo-icon">F</div>
+                    <div class="flovita-brand">
+                        <h1>Flovita <span style="font-size: 0.8em;">🌸</span></h1>
+                        <span>Fresh blooms & gifts</span>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flovita-search">
+                    <div class="flovita-search-box">
+                        <span class="flovita-search-icon">🔍</span>
+                        <input type="text" placeholder="Search for Products, Brands and More" aria-label="Search products">
+                    </div>
+                </div>
+                
+                <!-- Header Actions -->
+                <div class="flovita-actions">
+                    <a href="login.html" class="flovita-action-btn" aria-label="Login">
+                        👤 Login
+                    </a>
+                    <div class="flovita-cart-section">
+                        <a href="cart.html" class="flovita-action-btn" aria-label="Shopping cart">
+                            🛒 Cart
+                            <span class="flovita-cart-badge">0</span>
+                        </a>
+                        <a href="checkout.html" class="flovita-action-btn flovita-checkout-btn" aria-label="Checkout">
+                            💳 Checkout
+                        </a>
+                    </div>
+                    <a href="orders.html" class="flovita-action-btn" aria-label="Orders">
+                        📎 Orders
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Category Bar -->
+        <div class="flovita-header-bottom">
+            <nav class="flovita-categories" role="navigation" aria-label="Product categories">
+                <a href="index.html" class="flovita-category" aria-label="Home">
+                    <div class="flovita-category-icon">🏠</div>
+                    <div class="flovita-category-text">Home</div>
+                </a>
+                <a href="men.html" class="flovita-category" aria-label="Men's Fashion">
+                    <div class="flovita-category-icon">👔</div>
+                    <div class="flovita-category-text">Men</div>
+                </a>
+                <a href="women.html" class="flovita-category" aria-label="Women's Fashion">
+                    <div class="flovita-category-icon">👗</div>
+                    <div class="flovita-category-text">Women</div>
+                </a>
+                <a href="kids.html" class="flovita-category" aria-label="Kids Fashion">
+                    <div class="flovita-category-icon">👶</div>
+                    <div class="flovita-category-text">Kids</div>
+                </a>
+                <a href="accessories.html" class="flovita-category" aria-label="Accessories">
+                    <div class="flovita-category-icon">👜</div>
+                    <div class="flovita-category-text">Accessories</div>
+                </a>
+                <a href="contact.html" class="flovita-category active" aria-label="Contact Us">
+                    <div class="flovita-category-icon">📞</div>
+                    <div class="flovita-category-text">Contact</div>
+                </a>
+                <a href="about.html" class="flovita-category" aria-label="About Us">
+                    <div class="flovita-category-icon">ℹ️</div>
+                    <div class="flovita-category-text">About</div>
+                </a>
+                <a href="register.html" class="flovita-category" aria-label="Register">
+                    <div class="flovita-category-icon">📝</div>
+                    <div class="flovita-category-text">Register</div>
+                </a>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <h1>Contact Us</h1>
+        <form action="/backend/contact.php" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Flovita. All rights reserved.</p>
+    </footer>
+</body>
+</html>
